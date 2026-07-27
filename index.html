@@ -183,9 +183,7 @@ if (data.error) {
     throw new Error(data.error);
 }
 
-                let rawText = data.candidates[0].content.parts[0].text;
-                rawText = rawText.replace(/```json/g, '').replace(/```/g, '').trim();
-                const result = JSON.parse(rawText);
+               const result = data;
 
                 threatLevelBox.innerText = result.risk_level;
                 if (result.risk_level === 'CRITICAL') {
