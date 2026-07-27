@@ -83,9 +83,20 @@ The AI responds in structured JSON which is displayed inside the application.
 
 Example:
 
-- Home Page
+- Home Page 
+
+<img width="1920" height="960" alt="Screenshot (607)" src="https://github.com/user-attachments/assets/0bf3ee62-f28d-4e5c-b6ea-219c15a2b94b" />
+
+
 - Security Scan Result
+
+<img width="1920" height="911" alt="Screenshot (608)" src="https://github.com/user-attachments/assets/479586ca-52ca-4374-b5c4-7a304bb2a5f5" />
+
+
 - Threat Analysis Report
+
+<img width="1920" height="911" alt="Screenshot (609)" src="https://github.com/user-attachments/assets/29103388-2d75-4564-9166-e3ee0cca3d70" />
+
 
 ---
 
@@ -129,17 +140,6 @@ npm start
 
 ---
 
-### Home Page
-
-![Home Page](images/home.png)
-
-### Security Scan
-
-![Security Scan](images/scan-result.png)
-
-### Threat Analysis Report
-
-![Threat Analysis](images/report.png)
 ## Author
 
 **Saba Jamshed**
