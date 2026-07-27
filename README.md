@@ -27,7 +27,7 @@ https://llm-nexus-sentinel.vercel.app
 
 ## GitHub Repository
 
-YOUR_GITHUB_REPO_LINK
+https://github.com/sabikhanhacker-cell/LLMNexus-Sentinel
 
 ---
 
