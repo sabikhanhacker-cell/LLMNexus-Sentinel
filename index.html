@@ -98,6 +98,16 @@
 </div>
 
                     <div class="space-y-4">
+                        <div class="bg-darkbg border border-bordercolor p-4 rounded-xl">
+    <span class="block text-[10px] uppercase font-bold text-gray-500 mb-2">
+        🛡 Security Recommendations
+    </span>
+
+    <ul id="recommendations"
+        class="text-sm text-green-400 list-disc pl-5 space-y-2">
+        <li>No recommendations yet.</li>
+    </ul>
+</div>
                         <div class="bg-darkbg border border-bordercolor p-4 rounded-xl min-h-[120px]">
                             <span class="block text-[10px] uppercase font-bold text-gray-500 mb-1">Threat Analysis & Findings</span>
                             <p id="threatAnalysis" class="text-sm text-gray-400">Run a scan to generate threat levels, injection analysis, and sanitized prompt recommendations.</p>
@@ -160,6 +170,7 @@
             const threatLevelBox = document.getElementById('threatLevel');
             const scoreBox = document.getElementById('threatScore');
             const attackTypeBox = document.getElementById('attackType');
+            const recommendationsBox = document.getElementById("recommendations");
             const sanitizedBox = document.getElementById('sanitizedInput');
             const confidenceBox = document.getElementById('confidenceBox');
             const riskBar = document.getElementById('riskBar');
@@ -217,6 +228,15 @@ if (data.error) {
 attackTypeBox.innerText = result.attack_type;
                 analysisBox.innerText = result.analysis;
                 sanitizedBox.innerText = result.sanitized_version;
+                if (result.recommendations && result.recommendations.length > 0) {
+
+    recommendationsBox.innerHTML = "";
+
+    result.recommendations.forEach(rec => {
+        recommendationsBox.innerHTML += `<li>${rec}</li>`;
+    });
+
+}
                 // Confidence Score
 const confidence = Math.min(99, Math.max(60, 100 - (result.score * 5)));
 confidenceBox.innerText = confidence + "%";
@@ -243,6 +263,7 @@ else {
                 attackTypeBox.innerText = '--';
                 analysisBox.innerText = 'Failed to analyze: ' + error.message;
                 sanitizedBox.innerText = 'N/A';
+                recommendationsBox.innerHTML = "<li>No recommendations available.</li>";
             }
         }
         document.getElementById("copyReportBtn").addEventListener("click", function () {
