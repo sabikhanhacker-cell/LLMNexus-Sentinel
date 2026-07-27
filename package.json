@@ -1,0 +1,14 @@
+{
+  "name": "llmnexus-sentinel",
+  "version": "1.0.0",
+  "description": "AI Prompt Injection & Vulnerability Scanner",
+  "main": "index.html",
+  "scripts": {
+    "start": "vercel dev"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
