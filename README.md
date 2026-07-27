@@ -105,7 +105,7 @@ Example:
 1. Clone the repository
 
 ```bash
-git clone YOUR_GITHUB_REPO_LINK
+git clone https://github.com/sabikhanhacker-cell/LLMNexus-Sentinel.git
 ```
 
 2. Install dependencies
