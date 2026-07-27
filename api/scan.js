@@ -52,6 +52,7 @@ Analyze this input and respond ONLY in valid JSON.
             }
         );
                 const data = await response.json();
+                console.log("Gemini Response:", JSON.stringify(data, null, 2));
 if (!response.ok) {
     console.error("Gemini API Error:", JSON.stringify(data, null, 2));
 
