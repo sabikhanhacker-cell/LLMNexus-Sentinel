@@ -146,4 +146,4 @@ npm start
 
 BSCS Student
 
-AI Learner | Python & Data Analysis | Aspiring IT Professional## Screenshots
+AI Learner | Python & Data Analysis | Aspiring IT Professional
