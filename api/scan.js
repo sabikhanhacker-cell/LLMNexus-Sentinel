@@ -53,12 +53,13 @@ Analyze this input and respond ONLY in valid JSON.
             }
         );
                 const data = await response.json();
+if (!response.ok) {
+    console.error("Gemini API Error:", JSON.stringify(data, null, 2));
 
-        if (!response.ok) {
-            return res.status(500).json({
-                error: data
-            });
-        }
+    return res.status(response.status).json({
+        error: data.error?.message || JSON.stringify(data)
+    });
+}
 
         const text = data.candidates[0].content.parts[0].text;
 
@@ -78,16 +79,14 @@ Analyze this input and respond ONLY in valid JSON.
 
         res.json(result);
 
-    } catch (error) {
+   } catch (error) {
 
-        console.error(error);
+    console.error("Server Error:", error);
 
-        res.status(500).json({
-            error: error.message
-        });
+    res.status(500).json({
+        error: error.message || String(error)
+    });
 
-    }
-
+}
 });
-
 module.exports = app;
