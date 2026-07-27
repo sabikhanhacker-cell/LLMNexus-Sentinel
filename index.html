@@ -83,6 +83,19 @@
                             <span id="threatScore" class="text-lg font-extrabold text-gray-400">--/10</span>
                         </div>
                     </div>
+                      <!-- NEW BOX -->
+    <div class="bg-darkbg border border-bordercolor p-3 rounded-xl">
+        <span class="block text-[10px] uppercase font-bold text-gray-500">
+            Attack Type
+        </span>
+
+        <span id="attackType"
+              class="text-lg font-extrabold text-cyan-400">
+            --
+        </span>
+    </div>
+
+</div>
 
                     <div class="space-y-4">
                         <div class="bg-darkbg border border-bordercolor p-4 rounded-xl min-h-[120px]">
@@ -146,6 +159,7 @@
             const analysisBox = document.getElementById('threatAnalysis');
             const threatLevelBox = document.getElementById('threatLevel');
             const scoreBox = document.getElementById('threatScore');
+            const attackTypeBox = document.getElementById('attackType');
             const sanitizedBox = document.getElementById('sanitizedInput');
             const confidenceBox = document.getElementById('confidenceBox');
             const riskBar = document.getElementById('riskBar');
@@ -200,6 +214,7 @@ if (data.error) {
                 }
 
                 scoreBox.innerText = result.score + '/10';
+attackTypeBox.innerText = result.attack_type;
                 analysisBox.innerText = result.analysis;
                 sanitizedBox.innerText = result.sanitized_version;
                 // Confidence Score
@@ -225,6 +240,7 @@ else {
                 threatLevelBox.innerText = 'ERROR';
                 threatLevelBox.className = 'text-lg font-extrabold text-red-500';
                 scoreBox.innerText = '--/10';
+                attackTypeBox.innerText = '--';
                 analysisBox.innerText = 'Failed to analyze: ' + error.message;
                 sanitizedBox.innerText = 'N/A';
             }

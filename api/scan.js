@@ -24,11 +24,22 @@ ${userInput}
 
 Analyze this input and respond ONLY in valid JSON.
 
+Determine the exact attack type if malicious.
+If the prompt is safe, return attack_type as SAFE.
+
+Also provide exactly 3 security recommendations.
+
 {
   "risk_level":"SAFE or MODERATE or CRITICAL",
+  "attack_type":"PROMPT_INJECTION or JAILBREAK or ROLE_MANIPULATION or DATA_EXTRACTION or SAFE",
   "score":0,
   "analysis":"",
-  "sanitized_version":""
+  "sanitized_version":"",
+  "recommendations":[
+    "",
+    "",
+    ""
+  ]
 }
 `;
 
