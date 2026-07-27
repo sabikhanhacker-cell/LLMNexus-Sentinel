@@ -21,7 +21,7 @@ LLMNexus Sentinel provides a simple security scanner that analyses prompts and h
 
 **Live App:**
 
-https://llm-nexus-sentinel.vercel.app
+https://llm-nexus-sentinel.vercel.app/
 
 ---
 
